@@ -18,5 +18,5 @@ app.use('/src', express.static(path + '/src'))
 apiRouter(app, register)
 webRouter(app, register)
 
-http.createServer(app).listen(80, () => { console.log(chalk.green('Non-SSL Server is now on http://localhost:80')) })
-https.createServer(ssl, app).listen(443, () => { console.log(chalk.green('SSL Server is now on https://localhost:433')) })
+http.createServer(app).listen(80, () => { console.log('Non-SSL Server is now on http://localhost:80') })
+https.createServer(ssl, app).listen(443, () => { console.log('SSL Server is now on https://localhost:433') })
