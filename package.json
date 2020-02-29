@@ -1,0 +1,26 @@
+{
+  "name": "wait-thats-illegal-embed",
+  "version": "1.0.0",
+  "description": "Discord Embed Maker for Normal User",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PMHStudio/wait-thats-illegal-embed.git"
+  },
+  "author": "PMH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PMHStudio/wait-thats-illegal-embed/issues"
+  },
+  "homepage": "https://github.com/PMHStudio/wait-thats-illegal-embed#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "crypto-random-string": "^3.1.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "uuid": "^7.0.1"
+  }
+}
