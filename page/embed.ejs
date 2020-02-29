@@ -2,8 +2,7 @@
 <% if (embed.success) { %>
 <meta name="theme-color" content="<%= embed.data.color %>">
 
-<meta name="twitter:card" content="<%= embed.data.top %>">
-<meta name="application-name" content="<%= embed.data.top %>">
+<meta name="twitter:title" content="<%= embed.data.top %>">
 
 <meta property="og:title" content="<%= embed.data.middle %>">
 <meta property="og:description"content="<%= embed.data.bottom %>">
@@ -15,8 +14,7 @@
 <% } else { %>
 <meta name="theme-color" content="#FF0000">
 
-<meta name="twitter:card" content="Tritium Networks">
-<meta name="application-name" content="Tritium Networks">
+<meta name="twitter:title" content="Tritium Networks">
 
 <meta property="og:title" content="임배드를 찾을 수 없습니다">
 <meta property="og:description"content="Url을 다시한번 확인해보세요">
