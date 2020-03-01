@@ -8,5 +8,7 @@ head, body {
 }
 
 body {
+  background-image: url(https://picsum.photos/1920/1080);
+  background-repeat: no-repeat;
   font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
 }
