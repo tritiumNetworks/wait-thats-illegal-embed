@@ -46,7 +46,7 @@ if (!existsSync(path + '/data/embeds.json')) writeFileSync(path + '/data/embeds.
 let embeds = JSON.parse(readFileSync(path + '/data/embeds.json').toString('utf-8'))
 
 function addEmbed (obj) {
-  const eid = randStr({ length: 8, type: 'url-safe' })
+  const eid = randStr({ length: 10, type: 'url-safe' })
   embeds[eid] = obj
   return eid
 }
