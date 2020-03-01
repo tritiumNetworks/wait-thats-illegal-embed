@@ -1,6 +1,8 @@
+let data = getMeta('data').split(';')
+
 Swal.fire({
   title: 'Embed Maker',
-  text: "심심해서 만든 디스코드 임베딩 도구",
+  html: "심심해서 만든 디스코드 임베딩 도구<br />" + data[1] + '번째 접속, ' + data[2] + '개의 임베드',
   imageUrl: 'https://discordapp.com/assets/94db9c3c1eba8a38a1fcf4f223294185.png',
   imageAlt: 'Discord',
   confirmButtonText: '시작하기!',
@@ -9,6 +11,8 @@ Swal.fire({
 }).then(() => {
   Swal.mixin({
     input: 'text',
+    imageUrl: 'https://cdn.discordapp.com/attachments/530043751901429762/683589714426462258/unknown.png',
+    imageAlt: 'example',
     confirmButtonText: '다음 <i class="fas fa-arrow-alt-circle-right"></i>',
     allowEscapeKey: false,
     allowOutsideClick: false,
@@ -28,13 +32,12 @@ Swal.fire({
   ]).then((result) => {
     if (result.value) {
       const v = result.value
-      const data = getMeta('data').split(';')
       const body = JSON.stringify({ top: v[0], middle: v[1], bottom: v[2], color: v[3], image: v[4] })
       fetch('/api/create?auth=' + data[0], { headers: { 'Content-Type': 'application/json' }, body, method: 'PUT' })
         .then((res) => { return res.json() })
         .then((json) => {
           if (!json.sucess) Swal.fire({ title: '처리에 실패햐였습니다', text: json.reason, icon: 'error', allowEscapeKey: false, allowOutsideClick: false, showConfirmButton: false })
-          else Swal.fire({ title: '처리가 완료되었습니다', html:'<input class="form-control" type="text" value="http://' + window.location.host + '/' + json.eid + '">', icon: 'success', allowEscapeKey: false, allowOutsideClick: false, showConfirmButton: false })
+          else Swal.fire({ title: '처리가 완료되었습니다', html:'디스코드 채팅방에 이 링크를 보내보세요<hr/><input class="form-control result" type="text" value="http://' + window.location.host + '/' + json.eid + '">', icon: 'success', allowEscapeKey: false, allowOutsideClick: false, showConfirmButton: false })
         })
     }
   })
