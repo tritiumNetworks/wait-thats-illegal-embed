@@ -36,7 +36,7 @@ Swal.fire({
       fetch('/api/create?auth=' + data[0], { headers: { 'Content-Type': 'application/json' }, body, method: 'PUT' })
         .then((res) => { return res.json() })
         .then((json) => {
-          if (!json.sucess) Swal.fire({ title: '처리에 실패햐였습니다', text: json.reason, icon: 'error', allowEscapeKey: false, allowOutsideClick: false, showConfirmButton: false })
+          if (!json.sucess) Swal.fire({ title: '처리에 실패하였습니다', text: json.reason, icon: 'error', allowEscapeKey: false, allowOutsideClick: false, showConfirmButton: false })
           else Swal.fire({ title: '처리가 완료되었습니다', html:'디스코드 채팅방에 이 링크를 보내보세요<hr/><input class="form-control result" type="text" value="http://' + window.location.host + '/' + json.eid + '">', icon: 'success', allowEscapeKey: false, allowOutsideClick: false, showConfirmButton: false })
         })
     }
