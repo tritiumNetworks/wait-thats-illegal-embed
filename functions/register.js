@@ -64,7 +64,23 @@ module.exports.addEmbed = addEmbed
 module.exports.getEmbed = getEmbed
 module.exports.embCount = embCount
 
+// --- Cooldown
+
+const coolList = []
+
+function cooldown (ip) {
+  const res = coolList.includes(ip)
+  coolList.push(ip)
+  setTimeout(() => {
+    coolList[coolList.indexOf(ip)] = null
+  })
+  return res
+}
+
+module.exports.cooldown = cooldown
+
 // --- Saving
+
 setInterval(() => {
   writeFileSync(path + '/data/counts.json', count)
   writeFileSync(path + '/data/embeds.json', JSON.stringify(embeds))

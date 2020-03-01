@@ -6,6 +6,7 @@ function fnc (app, register) {
     if (!req.body) return res.send({ sucess: false, reason: 'Request Error) Request Body is not Exist!' })
     if (isNotCompletedBody(req.body)) return res.send({ success: false, reason: 'Request Error) Request Body is not Completed' })
     if (JSON.stringify(req.body).length > 500) return res.send({ success: false, reason: 'Requet Error) Request Body is too Large' })
+    if (register.cooldown(req.ip)) return res.send({ success: false, reason: 'Request Error) Too Many Requests' })
 
     const eid = register.addEmbed(req.body)
     res.send({ sucess: true, eid })
