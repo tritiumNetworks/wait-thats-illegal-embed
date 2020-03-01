@@ -5,6 +5,7 @@ function fnc (app, register) {
     if (!register.useAuth(req.query.auth)) return res.send({ sucess: false, reason: 'Request Error) Auth-Code is not Correct!' })
     if (!req.body) return res.send({ sucess: false, reason: 'Request Error) Request Body is not Exist!' })
     if (isNotCompletedBody(req.body)) return res.send({ success: false, reason: 'Request Error) Request Body is not Completed' })
+    if (req.body.length > 500) return res.send({ success: false, reason: 'Requet Error) Request Body is too Large' })
 
     const eid = register.addEmbed(req.body)
     res.send({ sucess: true, eid })
