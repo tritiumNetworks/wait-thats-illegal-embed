@@ -12,6 +12,7 @@ function fnc (app, register) {
   })
 
   app.get('/:eid', (req, res) => {
+    register.addCount()
     if (!req.params.eid) return
     const embed = register.getEmbed(req.params.eid)
     renderFile(path + '/page/embed.ejs', { embed }, (err, str) => {
