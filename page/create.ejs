@@ -1,13 +1,23 @@
-<meta name="auth" content="<%= auth %>">
-<link rel="stylesheet" href="/src/css/main.css">
-<input type="color" id="color">
-<input type="text" id="top" placeholder="상단">
-<input type="text" id="middle" placeholder="제목">
-<input type="text" id="bottom" placeholder="하단">
-<input type="text" id="image" placeholder="이미지 URL">
-<button onclick="create()">생성하기</button>
-<hr />
-<%= count %>번째 방문입니다, 
-<%= embCount %>개의 임베드가 있습니다
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.0.0/fetch.min.js"></script>
-<script src="/src/js/main.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6bedd4">
+    <meta name="og:site_name" content="Made By Tritium Networks">
+    <meta property="og:title" content="Embed Maker">
+    <meta property="og:description"content="심심해서 만든 디스코드 임베딩 도구">
+    <meta property="og:image" content="https://discordapp.com/assets/28174a34e77bb5e5310ced9f95cb480b.png">
+    <meta property="twitter:image:src" content="https://discordapp.com/assets/28174a34e77bb5e5310ced9f95cb480b.png">
+    <link rel="shortcut icon" href="https://discordapp.com/assets/28174a34e77bb5e5310ced9f95cb480b.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/1213a7cbad.js" crossorigin="anonymous"></script>
+    <meta name="data" content="<%= auth %>;<%= count %>;<%= embCount %>">
+    <link rel="stylesheet" href="/src/css/main.css">
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://unpkg.com/unfetch/polyfill"></script>
+    <script src="/src/js/main.js"></script>
+  </body>
+</html>
