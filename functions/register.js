@@ -23,9 +23,9 @@ module.exports.useAuth = useAuth
 
 // --- Counting
 
-if (!existsSync(path + '/data/')) mkdirSync(path + '/data')
-if (!existsSync(path + '/data/counts.json')) writeFileSync(path + '/data/counts.json', 0)
-let count = readFileSync(path + '/data/counts.json').toString('utf-8')
+if (!existsSync(path + '/router/embed/data/')) mkdirSync(path + '/router/embed/data')
+if (!existsSync(path + '/router/embed/data/counts.json')) writeFileSync(path + '/router/embed/data/counts.json', 0)
+let count = readFileSync(path + '/router/embed/data/counts.json').toString('utf-8')
 
 function addCount (c) {
   if (c) count += c
@@ -41,9 +41,9 @@ module.exports.getCount = getCount
 
 // --- Embed Registing
 
-if (!existsSync(path + '/data/')) mkdirSync(path + '/data')
-if (!existsSync(path + '/data/embeds.json')) writeFileSync(path + '/data/embeds.json', '{}')
-let embeds = JSON.parse(readFileSync(path + '/data/embeds.json').toString('utf-8'))
+if (!existsSync(path + '/router/embed/data/')) mkdirSync(path + '/router/embed/data')
+if (!existsSync(path + '/router/embed/data/embeds.json')) writeFileSync(path + '/router/embed/data/embeds.json', '{}')
+const embeds = JSON.parse(readFileSync(path + '/router/embed/data/embeds.json').toString('utf-8'))
 
 function addEmbed (obj) {
   const eid = randStr({ length: 10, type: 'url-safe' })
@@ -82,6 +82,6 @@ module.exports.cooldown = cooldown
 // --- Saving
 
 setInterval(() => {
-  writeFileSync(path + '/data/counts.json', count)
-  writeFileSync(path + '/data/embeds.json', JSON.stringify(embeds))
+  writeFileSync(path + '/router/embed/data/counts.json', count)
+  writeFileSync(path + '/router/embed/data/embeds.json', JSON.stringify(embeds))
 }, 10000)
